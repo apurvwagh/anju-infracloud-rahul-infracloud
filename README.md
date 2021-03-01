@@ -22,4 +22,31 @@ Saving to: ‘./part-1-output’
 
 [root@Ansible ~]#
 
+======================================================================================================================
+
+[root@Ansible ~]# cat part-1-output
+Y3N2c2VydmVyIGdlbmVyYXRlZCBhdDogMTYxNDYxNjU1OQ==
+CSVSERVER_BORDER: Orange
+0,  20707
+1,  26604
+2,  19569
+3,  19328
+4,  30130
+5,  590
+6,  27525
+7,  27021
+8,  15303
+9,  1627
+[root@Ansible ~]#
+======================================================================================
+
+[root@Ansible ~]# cat part-1-logs
+2021/03/01 16:17:09 listening on ****
+2021/03/01 16:17:41 wrote 654 bytes for /
+2021/03/01 16:17:41 wrote 654 bytes for /favicon.ico
+2021/03/01 16:19:57 wrote 171 bytes for /raw
+2021/03/01 16:20:06 wrote 171 bytes for /raw
+[root@Ansible ~]#
+
+
 
