@@ -61,6 +61,7 @@ Creating root_test_1 ... done
 ===========================================================================================================
 **Part III**
 [root@Ansible ~]# docker-compose up -d
+
 Building with native build. Learn about native build in Compose here: https://docs.docker.com/go/compose-native-build/
 Pulling prom (prom/prometheus:v2.22.0)...
 v2.22.0: Pulling from prom/prometheus
