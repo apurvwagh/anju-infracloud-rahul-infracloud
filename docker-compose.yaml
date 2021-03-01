@@ -1,0 +1,16 @@
+version: '2'
+services:
+  test:
+    image: 'csvserver-mod'
+    environment:
+       - CSVSERVER_BORDER=Orange
+    ports:
+       - '9393:9300'
+
+  prom:
+    image: 'prom/prometheus:v2.22.0'
+    ports:
+      - '9090:9090'
+    volumes:
+      - '/root/solution:/etc/prometheus'
+
