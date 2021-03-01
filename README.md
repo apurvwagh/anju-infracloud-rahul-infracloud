@@ -38,6 +38,7 @@ CSVSERVER_BORDER: Orange
 8,  15303
 9,  1627
 [root@Ansible ~]#
+
 ======================================================================================
 
 [root@Ansible ~]# cat part-1-logs
@@ -46,7 +47,7 @@ CSVSERVER_BORDER: Orange
 2021/03/01 16:17:41 wrote 654 bytes for /favicon.ico
 2021/03/01 16:19:57 wrote 171 bytes for /raw
 2021/03/01 16:20:06 wrote 171 bytes for /raw
-[root@Ansible ~]#
+
 
 
 
