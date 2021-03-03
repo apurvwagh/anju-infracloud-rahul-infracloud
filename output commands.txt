@@ -1,0 +1,180 @@
+PART -I
+ 
+733  docker build -t csvserver-mod .
+  734  docke ps
+  735  docker run -dit  -p 9393:9300 -e CSVSERVER_BORDER=Orange  csvserver-mod
+  736  docker ps
+  737  ld
+  738  ls
+  739  cat Dockerfile
+  740  curl -o ./part-1-output http://localhost:9393/raw
+  741  wget -O ./part-1-output http://localhost:9393/raw
+  
+================================================================================================
+
+PART -II
+
+  753  docker-compose up
+  754  sudo curl -L "https://github.com/docker/compose/releases/download/1.28.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+  757  sudo chmod +x /usr/local/bin/docker-compose
+  
+  762  docker-compose up -d   --> run dtach mode
+  763  docker ps
+  764  vi docker-compose.yaml
+  765  docker-compose up -d
+  766  docker ps
+  
+  783  cat docker-compose.yaml
+  784  vi docker-compose.yaml
+  785  docker ps
+  786  docker rm -f 29b09d0a61bc
+  787  docker-compose up -d
+  788  ls
+  789  docker ps
+  790  cat docker-compose.yaml
+  791  ls
+  792  cat Dockerfile
+  793  vi docker-compose.yaml
+  794  vim docker-compose.yaml
+  795  ls
+  796  cat Dockerfile
+  797  vim docker-compose.yaml
+  798  vi pro.yaml
+  799  mv pro.yaml prometheus.yml
+  800  ls
+  801  vim prometheus.yml
+  802  pwd
+  803  cp -r prometheus.yml solution
+  804  ls
+  805  cd solution
+  806  ls
+  807  cd ..
+  808  vim docker-compose.yaml
+  809  pwd
+  810  vim docker-compose.yaml
+  811  docker-compose up -d
+  812  docker ps
+  813  ls
+  814  cat gencsv.sh
+  815  cat inputFile
+  816  ls
+  817  cat Dockerfile
+  818  curl -o ./part-1-output http://localhost:9393/raw
+  819  wget -O ./part-1-output http://localhost:9393/raw
+  820  ls
+  821  cat docker-compose.yaml
+  822  cat prometheus.yml
+  823  docker ps
+  824  history
+  825  docker-compose up -d
+  826  ls
+  827  cd solution
+  828  ls
+  829  cat prometheus.yml
+  830  cd ..
+  831  ls
+  832  cat prometheus.yml
+  833  ls
+  834  cat part-1-output
+  835  cat part-1-logs
+  836  ls
+  837  cat prometheus.yml
+  838  ls
+  839  cd solution
+  840  l
+  841  sls
+  842  ls
+  843  cat prometheus.yml
+  844  ls
+  845  cd ..
+  846  ls
+  847  cat docker-compose.yaml
+  848  docker ps
+  849  ls
+  850  history
+
+
+==================
+PART 3
+
+1st create solution dire copy prometheus.yml file to solution folder and mount  /root/solution:/etc/prometheus' in docker-compse file  
+
+
+# docker-compose up -d --> run in dtach mode
+
+
+[root@ip-172-31-33-183 anju-infracloud-rahul-infracloud]# docker-compose up -d  
+
+Building with native build. Learn about native build in Compose here: https://docs.docker.com/go/compose-native-build/
+Pulling prom (prom/prometheus:v2.22.0)...
+v2.22.0: Pulling from prom/prometheus
+76df9210b28c: Pull complete
+559be8e06c14: Pull complete
+97170ed2e56a: Pull complete
+4a6c0b5646ca: Pull complete
+f6776fcc9f18: Pull complete
+7eed139cfec6: Pull complete
+c0c3c15c8e94: Pull complete
+ad6e678f5b25: Pull complete
+9a8236411762: Pull complete
+0cfb39b876cc: Pull complete
+ffe345581c7a: Pull complete
+033c1a7f7349: Pull complete
+Digest: sha256:60190123eb28250f9e013df55b7d58e04e476011911219f5cedac3c73a8b74e6
+Status: Downloaded newer image for prom/prometheus:v2.22.0
+anju-infracloud-rahul-infracloud_test_1 is up-to-date
+Creating anju-infracloud-rahul-infracloud_prom_1 ... done
+Attaching to anju-infracloud-rahul-infracloud_test_1, anju-infracloud-rahul-infracloud_prom_1
+test_1  | 2021/03/03 15:11:56 listening on ****
+test_1  | 2021/03/03 15:12:15 wrote 654 bytes for /
+test_1  | 2021/03/03 15:12:15 wrote 654 bytes for /favicon.ico
+prom_1  | level=info ts=2021-03-03T15:23:31.131Z caller=main.go:315 msg="No time or size retention was set so using the default time retention" duration=15d
+prom_1  | level=info ts=2021-03-03T15:23:31.138Z caller=main.go:353 msg="Starting Prometheus" version="(version=2.22.0, branch=HEAD, revision=0a7fdd3b76960808c3a91d92267c3d815c1bc354)"
+prom_1  | level=info ts=2021-03-03T15:23:31.139Z caller=main.go:358 build_context="(go=go1.15.3, user=root@6321101b2c50, date=20201015-12:29:59)"
+prom_1  | level=info ts=2021-03-03T15:23:31.139Z caller=main.go:359 host_details="(Linux 4.14.219-161.340.amzn2.x86_64 #1 SMP Thu Feb 4 05:54:19 UTC 2021 x86_64 30cd7cd7d1e5 (none))"
+prom_1  | level=info ts=2021-03-03T15:23:31.139Z caller=main.go:360 fd_limits="(soft=1024, hard=4096)"
+prom_1  | level=info ts=2021-03-03T15:23:31.140Z caller=main.go:361 vm_limits="(soft=unlimited, hard=unlimited)"
+prom_1  | level=info ts=2021-03-03T15:23:31.154Z caller=main.go:712 msg="Starting TSDB ..."
+prom_1  | level=info ts=2021-03-03T15:23:31.156Z caller=web.go:516 component=web msg="Start listening for connections" address=0.0.0.0:9090
+prom_1  | level=info ts=2021-03-03T15:23:31.167Z caller=head.go:642 component=tsdb msg="Replaying on-disk memory mappable chunks if any"
+prom_1  | level=info ts=2021-03-03T15:23:31.168Z caller=head.go:656 component=tsdb msg="On-disk memory mappable chunks replay completed" duration=4.989µs
+prom_1  | level=info ts=2021-03-03T15:23:31.168Z caller=head.go:662 component=tsdb msg="Replaying WAL, this may take a while"
+prom_1  | level=info ts=2021-03-03T15:23:31.169Z caller=head.go:714 component=tsdb msg="WAL segment loaded" segment=0 maxSegment=0
+prom_1  | level=info ts=2021-03-03T15:23:31.170Z caller=head.go:719 component=tsdb msg="WAL replay completed" checkpoint_replay_duration=46.257µs wal_replay_duration=2.130713ms total_replay_duration=2.825148ms
+prom_1  | level=info ts=2021-03-03T15:23:31.172Z caller=main.go:732 fs_type=XFS_SUPER_MAGIC
+prom_1  | level=info ts=2021-03-03T15:23:31.174Z caller=main.go:735 msg="TSDB started"
+prom_1  | level=info ts=2021-03-03T15:23:31.175Z caller=main.go:861 msg="Loading configuration file" filename=/etc/prometheus/prometheus.yml
+prom_1  | level=info ts=2021-03-03T15:23:31.179Z caller=main.go:892 msg="Completed loading of configuration file" filename=/etc/prometheus/prometheus.yml totalDuration=4.366384ms remote_storage=3.945µs web_handler=1.253µs query_engine=2.361µs scrape=2.035333ms scrape_sd=53.989µs notify=585.496µs notify_sd=21.664µs rules=2.13µs
+prom_1  | level=info ts=2021-03-03T15:23:31.179Z caller=main.go:684 msg="Server is ready to receive web requests."
+test_1  | 2021/03/03 15:25:16 wrote 654 bytes for /
+test_1  | 2021/03/03 15:25:16 wrote 654 bytes for /favicon.ico
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping anju-infracloud-rahul-infracloud_prom_1 ... done
+Stopping anju-infracloud-rahul-infracloud_test_1 ... done
+[root@ip-172-31-33-183 anju-infracloud-rahul-infracloud]# docker-compose up -d
+Building with native build. Learn about native build in Compose here: https://docs.docker.com/go/compose-native-build/
+Starting anju-infracloud-rahul-infracloud_test_1 ... done
+Starting anju-infracloud-rahul-infracloud_prom_1 ... done
+
+
+[root@ip-172-31-33-183 anju-infracloud-rahul-infracloud]# ls
+docker-compose.yaml  Dockerfile  gencsv.sh  inputFile  output 1.PNG  prometheus.yml  promo output.PNG  promo - target.PNG  README.md  solution
+[root@ip-172-31-33-183 anju-infracloud-rahul-infracloud]#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
